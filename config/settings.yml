@@ -1,0 +1,20 @@
+history:
+  init_load_day: 7
+  more_load_day: 7
+
+period_names_ja:
+  breakfast: '朝'
+  lunch:     '昼'
+  dinner:    '夜'
+
+ranking:
+  default_load_num: 10
+
+wday_names_ja:
+  - '日'
+  - '月'
+  - '火'
+  - '水'
+  - '木'
+  - '金'
+  - '土'

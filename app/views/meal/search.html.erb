@@ -1,0 +1,21 @@
+<main id="pageSearch">
+  <h1>検索</h1>
+  <ul id="search-tab">
+    <li data-searchtype="date" class="current-tab">日付</li>
+    <li data-searchtype="word">キーワード</li>
+  </ul>
+  <div class="searchContainer" class="content">
+    <div class="date-search" placeholder="日付を選んでください...">
+      <input type="text" class="datepicker">
+      <button class="search-button date-search-button">検索</button>
+      <div class="date-search-results">
+      </div>
+    </div>
+    <div class="word-search hidden">
+      <input type="text" class="keyword-textbox" size="20" maxlength="15" placeholder="例:カレー">
+      <button  class="search-button word-search-button">検索</button>
+      <div class="keyword-search-results">
+      </div>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dormeal</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <link rel="stylesheet" href="css/main.css">
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<header>
+  <div id="title-logo">
+    <a href="/"><img id="top-logo" src="img/logo.png" alt="Yammyロゴ"></a>
+  </div>
+  <nav id="gloval-nav-pc">
+  <ul>
+    <li><%= link_to '今日', controller: 'meal', action: 'daily', date: Date.today.to_s.delete('-') %></li>
+    <li><%= link_to 'すべて', controller: 'meal', action: 'list' %></li>
+    <li><%= link_to 'ランキング', controller: 'meal', action: 'ranking' %></li>
+    <li>
+    <form>
+    <input type="text" class="keyword-textbox" size="20" maxlength="15" placeholder="例:カレー">
+    <button  class="search-button word-search-button">検索</button>
+    <div class="keyword-search-results"></div>
+    </form>
+    </li>
+  </ul>
+  </nav>
+</header>
+<div id="page-wrapper">
+<%= yield %>
+</div>
+<% if @first_visit.nil?  %>
+<div id="modal" class="hidden">
+	<div id="modal-wrapper"></div>
+	<div id="modal-content">
+		<h1>Yammyへようこそ！</h1>
+    <%= image_tag('/img/close.png', class: 'close_button') %>
+		<section class="modal-items">
+			<h3 class="modal-items-title">いつでも見れる</h3>
+			<p class="modal-items-content">部屋からでも、教室からでも学内からであれば最新の献立を見ることができます。</p>
+		</section>
+		<section class="modal-items">
+			<h3 class="modal-items-title">投票しましょう</h3>
+			<p class="modal-items-content">おいしかったメニューは投票しましょう。人気のメニューはリクエストされるかも!?</p>
+		</section>
+    <section class="modal-items">
+      <h3 class="modal-items-title">過去の献立も</h3>
+      <p class="modal-items-content">献立データはいつでもさかのぼって見ることができます。検索もできます。</p>
+    </section>
+	</div>
+</div>
+<% end %>
+<nav id="sp-menu">
+  <ul>
+    <li class="sp-menu"><%= link_to image_tag('/img/home.png'), controller: 'meal', action: 'daily', date: Date.today.to_s.delete('-') %></li>
+    <li class="sp-menu"><%= link_to image_tag('/img/history.png'), controller: 'meal', action: 'list' %></li>
+    <li class="sp-menu"><%= link_to image_tag('/img/popular.png'), controller: 'meal', action: 'ranking' %></li>
+    <li class="sp-menu"><%= link_to image_tag('/img/search.png'), controller: 'meal', action: 'search' %></li>
+  </ul>
+</nav>
+
+<script src="js/jquery.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/detect-user-agent.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/vote.js"></script>
+<script src="js/search-tabs.js"></script>
+<script src="js/search.js"></script>
+<script src="js/load.js"></script>
+<link rel="stylesheet" href="css/jquery-ui/jquery-ui.min.css">
+</body>
+</html>

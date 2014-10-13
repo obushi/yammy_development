@@ -1,0 +1,190 @@
+html {
+  height: 100%;
+}
+body.sp {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(228, 214, 193, 0.8);
+  @font-face {
+    font-family: 'SourceHanSansJP-L', '源ノ角ゴシック-L';
+    src: url('
+      fonts/SourceHanSansJP-Light.otf
+      ') format('opentype');
+  }
+  @font-face {
+    font-family: 'SourceHanSansJP-B', '源ノ角ゴシック-B';
+    src: url('
+      fonts/SourceHanSansJP-Bold.otf
+      ') format('opentype');
+  }
+
+  * {
+    font-family: 'SourceHanSansJP-L', '源ノ角ゴシック-L', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+    color: rgba(58, 54, 60, 1.0);
+  }
+
+  h1, h1 a {
+    font-size: 14pt;
+    color: #fff;
+    text-align: center;
+    text-shadow: 2px 2px 2px rgba(58, 54, 60, 1.0),
+                 -2px 2px 2px rgba(58, 54, 60, 1.0),
+                 2px -2px 2px rgba(58, 54, 60, 1.0),
+                 -2px -2px 2px rgba(58, 54, 60, 1.0);
+    text-decoration: none;
+  }
+
+  h2 {
+    font-size: 12pt;
+    line-height: 1em;
+    text-align: center;
+    text-shadow: 2px 2px 1px #fff,
+                 -2px 2px 1px #fff,
+                 2px -2px 1px #fff,
+                 -2px -2px 1px #fff;
+    text-decoration: none;
+
+    a {
+      color: rgba(231, 44, 0, 1.0);
+      text-decoration: none;
+    }
+  }
+
+  h3 {
+    font-size: 12pt;
+    margin: 0;
+  }
+
+  p.error {
+    text-align: center;
+    font-size: 12pt;
+    width: 90%;
+    margin: 10px 0;
+    padding: 3%;
+    display: inline-block;
+    border: double 1px rgba(231, 44, 0, 1.0);
+    border-radius: 4px;
+    color: rgba(231, 44, 0, 1.0);
+    text-shadow: 2px 2px 1px #fff,
+                 -2px 2px 1px #fff,
+                 2px -2px 1px #fff,
+                 -2px -2px 1px #fff;
+    text-decoration: none;
+  }
+
+  p.vote-button {
+    font-size: 10pt;
+    padding: 2px;
+    display: inline;
+    border: double 1px rgba(245, 54, 132, 1.0);
+    border-radius: 4px;
+    color: rgba(245, 54, 132, 1.0);
+    text-shadow: 2px 2px 1px #fff,
+                 -2px 2px 1px #fff,
+                 2px -2px 1px #fff,
+                 -2px -2px 1px #fff;
+    text-decoration: none;
+  }
+
+  p.voted-button {
+    font-size: 10pt;
+    padding: 2px;
+    display: inline;
+    border: double 1px rgba(245, 54, 132, 1.0);
+    border-radius: 4px;
+    color: rgba(245, 54, 132, 0.4);
+    text-shadow: 2px 2px 1px #fff,
+                 -2px 2px 1px #fff,
+                 2px -2px 1px #fff,
+                 -2px -2px 1px #fff;
+    text-decoration: none;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  header {
+    clear: both;
+    border-bottom: 1px rgba(208, 78, 0, 1.0) solid;
+    background-color: rgba(58, 54, 60, 1.0);
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+
+    nav#gloval-nav-pc {
+      display: none;
+    }
+  }
+
+  div#title-logo {
+    width: 100%;
+    float: none;
+    a {
+      width: 120px;
+      margin: 0 auto;
+      display: block;
+      img {
+        width: 120px;
+      }
+    }
+  }
+
+  li {
+    list-style: none;
+  }
+
+  div.hidden {
+    display: none;
+  }
+
+  div#page-wrapper {
+    padding: 80px 10% 60px 10%;
+    position: relative;
+    min-height: 100%;
+
+    li {
+      list-style: none;
+    }
+  }
+ nav#sp-menu {
+    border-top: 1px rgba(208, 78, 0, 1.0) solid;
+    background-color: rgba(254, 255, 236, 1.0);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 9999;
+
+    ul {
+      margin: 0 auto;
+      padding: 0;
+      width: 80%;
+      li {
+        width: 23%;
+        margin: 0;
+        padding: 0;
+        color: rgba(235, 215, 150, 1.0);
+        display: inline-block;
+        // width: 140px;
+        height: 48px;
+        font-size: 12pt;
+        text-align: center;
+        list-style: none;
+        a {
+          display: block;
+          width: 100%;
+          height: 100%;
+          font-weight: bold;
+          text-decoration: none;
+          color: rgba(250, 251, 225, 1.0);
+          font-family: 'SourceHanSansJP-B', '源ノ角ゴシック-B', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+        }
+        img {
+          margin: 4px 0 0 0;
+          width: 32px;
+        }
+      }
+    }
+  }
+}

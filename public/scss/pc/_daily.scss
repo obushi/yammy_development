@@ -1,0 +1,86 @@
+body.pc {
+  main#pageDaily {
+    h2 {
+      margin: 0;
+      display: inline-block;
+      color: rgba(58, 54, 60, 1.0);
+    }
+    article.daily {
+      section.meal {
+        float: left;
+        margin: 12px 15px;
+        width: 29%;
+
+        li {
+          font-size: 11pt;
+          width: 220px;
+        }
+        p {
+          margin: 3px 0;
+        }
+        p.nutrition {
+          font-size: 11pt;
+          clear: both;
+        }
+        p.dish {
+          float: left;
+          width: 70%;
+        }
+        p.kcal {
+          float: right;
+          text-align: right;
+          width: 30%;
+          font-size: 10pt;
+          color: rgba(45, 15, 11, 0.7);
+        }
+        ul {
+          float: left;
+          width: 100%;
+          padding: 6px 20px 0 0;
+        }
+      }
+
+      section.nutrition {
+        clear: both;
+        height: 100px;
+        margin: 20px 0 0 15px;
+        ul {
+          margin: 0;
+          padding: 6px 20px 0 0;
+        }
+        li {
+          font-size: 11pt;
+          display: inline;
+        }
+        p {
+          display: inline;
+          margin: 0 16px 0 0 ;
+        }
+      }
+
+      @media screen and (max-width: 640px) {
+        section.meal {
+          margin: 2%;
+          p.kcal {
+            display: none;
+          }
+          p.nutrition {
+            display: none;
+          }
+        }
+      }
+
+      @media screen and (max-width: 860px) {
+        section.meal {
+          margin: 2%;
+          p.kcal {
+            display: none;
+          }
+          p.nutrition {
+            font-size: 80%;
+          }
+        }
+      }
+    }
+  }
+}

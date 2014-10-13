@@ -1,0 +1,85 @@
+body.pc {
+  main#ranking {
+    article.ranking.rank1 {
+      section {
+        border-color: rgba(245, 230, 21, 1.0);
+        border: 5px solid;
+        border-image: url("../img/border-gold.png") 0 24 round;
+      }
+    }
+    article.ranking.rank2 {
+      section {
+        border-color: rgba(170, 170, 170, 1.0);
+        border: 5px solid;
+        border-image: url("../img/border-silver.png") 0 24 round;
+      }
+    }
+    article.ranking.rank3 {
+      section {
+        border-color: rgba(128, 47, 0, 1.0);
+        border: 5px solid;
+        border-image: url("../img/border-bronze.png") 0 24 round;
+      }
+    }
+  }
+	article.ranking {
+      width: 100%;
+      margin: auto;
+
+		h2 {
+      margin: 0;
+      float: left;
+  	}
+
+		section {
+      h3 {
+        display: block;
+      }
+      .main_dish_name {
+        margin: 12px 0;
+        display: block;
+        color: rgba(58, 54, 60, 1.0);
+        font-weight: bold;
+        text-shadow: 2px 2px 1px #fff,
+                     -2px 2px 1px #fff,
+                     2px -2px 1px #fff,
+                     -2px -2px 1px #fff;
+        text-decoration: none;
+      }
+      width: 420px;
+      margin: 8px 0 2px 210px;
+      padding: 0 0 0 6px;
+      font-size: 14pt;
+      float: none;
+      border-width: 5px;
+		}
+
+		ul {
+			float: left;
+			padding: 6px 20px 6px 0;
+			margin: 6px 0;
+		}
+
+		li {
+			width: 120px;
+			font-size: 10pt;
+		}
+  }
+  @media screen and (max-width: 860px) {
+    article.ranking {
+      h2 {
+        margin: 24px 0 2px 0;
+        float: none;
+      }
+      section {
+        h3 {
+          margin: 14px 0 2px 0;
+        }
+        float: none;
+        clear: both;
+        width: 100%;
+        margin: 8px 0 2px 0;
+      }
+    }
+  }
+}

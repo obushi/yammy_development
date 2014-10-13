@@ -1,0 +1,27 @@
+body.sp {
+  main {
+    clear: both;
+    article.list {
+      margin: 0 0 24px 0;
+
+      section {
+        margin: 12px 0;
+      }
+
+      h3 {
+        float: left;
+      }
+
+      ul {
+        padding: 0 0 0 32px;
+        margin: 0;
+      }
+
+      li {
+        width: 220px;
+        font-size: 11pt;
+      }
+
+    }
+  }
+}

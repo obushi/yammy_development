@@ -1,0 +1,32 @@
+body.pc {
+	main {
+		clear: both;
+		article.list {
+			margin: 0 10px 0 0;
+			height: 320px;
+			float: left;
+
+			section {
+				float: left;
+			}
+
+			ul {
+				float: left;
+				padding: 6px 20px 6px 0;
+				margin: 6px 0;
+			}
+
+			li {
+				width: 120px;
+				font-size: 10pt;
+			}
+		}
+		@media screen and (max-width: 955px) {
+      article.list {
+        width: 420px;
+        margin: 10px auto 0 auto;
+        float: none;
+      }
+    }
+	}
+}

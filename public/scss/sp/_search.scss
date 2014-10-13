@@ -1,0 +1,58 @@
+body.sp {
+
+  main#pageSearch {
+
+    input {
+      font-size: 16px;
+    }
+
+    button.search-button {
+      padding: 0;
+      width: 34%;
+      height: 30px;
+      color: #fff;
+      font-size: 12pt;
+      background-color: rgba(117, 46, 0, 1.0);
+      border-style: none;
+    }
+
+    input {
+      padding: 0;
+      width: 62%;
+      height: 30px;
+      border-radius: 4px;
+      border-style: none;
+    }
+
+    ul#search-tab {
+      padding: 0;
+      overflow: hidden;
+
+      li {
+        width: 48%;
+        height: 30px;
+        line-height: 30px;
+        font-weight: bold;
+        color: rgba(45, 15, 11, 1.0);
+        padding: 0;
+        border: 1px dotted rgba(117, 46, 0, 1.0);
+        background: rgba(234, 231, 231, 1.0);
+        text-align: center;
+        display: inline-block;
+      }
+
+      li.current-tab {
+        background: rgba(117, 46, 0, 1.0);
+        color: #fff;
+      }
+    }
+  }
+
+  div#ui-datepicker-div {
+    // top: 55px !important;
+    // left: 5px !important;
+    // display: block !important;
+    width: 308px !important;
+    margin: 0 auto !important;
+  }
+}
