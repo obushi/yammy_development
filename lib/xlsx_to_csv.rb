@@ -182,6 +182,10 @@ module XlsxToCsv
 		CSV.open('tmp/menu/meal.csv', 'wb') do |csv|
 			csv << meals.first.keys.unshift('id')
 			meals.each_with_index do |row, i|
+				puts row.class
+				if row.has_value?(nil)
+					row = {date:row[:date], period:row[:period], energy:0, protein:0, fat:0, carbohydrate:0, salt:0}
+				end
 				csv << row.values.unshift(i + 1)
 			end
 		end

@@ -127,15 +127,19 @@ $(function () {
         $('div.date-search-results').append('<article class="list">');
         $('div.date-search-results').prepend('<h2><a href="' + year + month + day + '">' + year + '年' + month + '月' + day + '日の献立</a></h2>');
         Object.keys(periods).forEach(function (period_key) {
-          $('article.list:last').append('<section class="meal">');
-          $('section.meal:last').append('<h3>' + periods[period_key] + '</h3>');
-          $('section.meal:last').append('<ul>');
           console.log(json);
-          for (var j = 0; j < json[key][period_key]['menu'].length; j++) {
-            $('section.meal:last ul').append('<li class="dish">' + json[key][period_key]['menu'][j]['name'] + '</li>');
+          console.log(period_key);
+          if (json[key][period_key]['menu'].length != 0) {
+            $('article.list:last').append('<section class="meal">');
+            $('section.meal:last').append('<h3>' + periods[period_key] + '</h3>');
+            $('section.meal:last').append('<ul>');
+            console.log(json);
+            for (var j = 0; j < json[key][period_key]['menu'].length; j++) {
+              $('section.meal:last ul').append('<li class="dish">' + json[key][period_key]['menu'][j]['name'] + '</li>');
+            }
+            $('section.list:last').append('</ul>');
+            $('article.list:last').append('</section>');
           }
-          $('section.list:last').append('</ul>');
-          $('article.list:last').append('</section>');
         });
         $('article.list:last').append('</article>');
       },

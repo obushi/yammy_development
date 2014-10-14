@@ -1,17 +1,17 @@
 <main id="ranking">
-	<h1>ランキング</h1>
-	<% @ranking.each do |item| %>
-	<article class="ranking rank<%= item['meal_info']['rank'].to_s %>">
-		<h2><a href=<%= item['meal_info']['date'].to_s.delete("-") %>><%= item['meal_info']['rank'] %>位 <%= item['meal_info']['count'] %>票</a></h2>
-		<section class="meal">
-			<h3>
-				<a href=<%= item["meal_info"]["date"].to_s.delete("-") %>>
-					<%= item['meal_info']['date'].strftime("%1m月%1d日") %><%= item['meal_info']['period'] %>
-				</a>
-			</h3>
-			<span class="main_dish_name"><%= item['meal_info']['main_dish_name'] %>など</span>
-			<p><%= item['meal_menu'].join(", ") %></p>
-		</section>
-	</article>
-	<% end %>
+  <h1>ランキング</h1>
+  <% @ranking.each do |item| %>
+  <article class="ranking rank<%= item['meal_info']['rank'].to_s %>">
+    <h2><a href=<%= item['meal_info']['date'].to_s.delete("-") %>><%= item['meal_info']['rank'] %>位 <%= item['meal_info']['count'] %>票</a></h2>
+    <section class="meal">
+      <h3>
+        <a href=<%= item["meal_info"]["date"].to_s.delete("-") %>>
+          <%= item['meal_info']['date'].strftime("%1m月%1d日") %><%= item['meal_info']['period'] %>
+        </a>
+      </h3>
+      <span class="main_dish_name"><%= item['meal_info']['main_dish_name'] %>など</span>
+      <p><%= item['meal_menu'].join(", ") %></p>
+    </section>
+  </article>
+  <% end %>
 </main>

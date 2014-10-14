@@ -1,38 +1,40 @@
 <main id="pageDaily" data-date=<%= @meal_date.strftime("%Y-%m-%d") %>>
-	<h1><a href=<%= @yesterday.strftime("%Y%m%d") %>>&lt; </a><%= @meal_date.strftime("%1m月%1d日(") + Settings.wday_names_ja[@meal_date.wday] + ')' %>のメニュー<a href=<%= @tomorrow.strftime("%Y%m%d") %>> &gt;</a>
-	</h1>
-	<article class="daily">
-		<% if @param_date_exists %>
-		<% Settings.period_names_ja.each do |period_key, period_val| %>
-		<section class="meal">
-			<h2><%= period_val %></h2>
-			<p class="vote-button" <%= 'id=vote-button-' + period_key.to_s %>>投票</p>
-			<ul>
-				<% @menu[period_key].each do |dish| %>
-				<li><p class="dish"><%= dish["name"] %></p><p class="kcal"><%= dish["kilo_calorie"] %>kcal</p></li>
-				<% end %>
-			</ul>
-			<p class="nutrition">
-				<%= @meal_nutrition[period_key][:energy] %>kcal
-				塩:<%= @meal_nutrition[period_key][:salt] %>g
-				た:<%= @meal_nutrition[period_key][:protein] %>g
-				脂:<%= @meal_nutrition[period_key][:fat] %>g
-			</p>
-		</section>
-		<% end %>
+  <h1><a href=<%= @yesterday.strftime("%Y%m%d") %>>&lt; </a><%= @meal_date.strftime("%1m月%1d日(") + Settings.wday_names_ja[@meal_date.wday] + ')' %>のメニュー<a href=<%= @tomorrow.strftime("%Y%m%d") %>> &gt;</a>
+  </h1>
+  <article class="daily">
+    <% if @param_date_exists %>
+    <% Settings.period_names_ja.each do |period_key, period_val| %>
+    <% unless @menu[period_key].empty? %>
+    <section class="meal">
+      <h2><%= period_val %></h2>
+      <p class="vote-button" <%= 'id=vote-button-' + period_key.to_s %>>投票</p>
+      <ul>
+        <% @menu[period_key].each do |dish| %>
+        <li><p class="dish"><%= dish["name"] %></p><p class="kcal"><%= dish["kilo_calorie"] %>kcal</p></li>
+        <% end %>
+      </ul>
+      <p class="nutrition">
+        <%= @meal_nutrition[period_key][:energy] %>kcal
+        塩:<%= @meal_nutrition[period_key][:salt] %>g
+        た:<%= @meal_nutrition[period_key][:protein] %>g
+        脂:<%= @meal_nutrition[period_key][:fat] %>g
+      </p>
+    </section>
+    <% end %>
+    <% end %>
 
-		<section class="nutrition">
-			<h2>1日の合計</h2>
-			<ul>
-			<% p @day_nutrition %>
-				<li><span class="title"></span><span class="value"><%= @day_nutrition[:energy] %>kcal</span></li>
-				<li><span class="title">塩分</span><span class="value"><%= @day_nutrition[:salt] %>g</span></li>
-				<li><span class="title">たんぱく質</span><span class="value"><%= @day_nutrition[:protein] %>g</span></li>
-				<li><span class="title">脂肪</span><span class="value"><%= @day_nutrition[:fat] %>g</span></li>
-			</ul>
-		</section>
-		<% else %>
-			<p class="error">献立データが登録されていません！</p>
-		<% end %>
-	</article>
+    <section class="nutrition">
+      <h2>1日の合計</h2>
+      <ul>
+      <% p @day_nutrition %>
+        <li><span class="title"></span><span class="value"><%= @day_nutrition[:energy] %>kcal</span></li>
+        <li><span class="title">塩分</span><span class="value"><%= @day_nutrition[:salt] %>g</span></li>
+        <li><span class="title">たんぱく質</span><span class="value"><%= @day_nutrition[:protein] %>g</span></li>
+        <li><span class="title">脂肪</span><span class="value"><%= @day_nutrition[:fat] %>g</span></li>
+      </ul>
+    </section>
+    <% else %>
+      <p class="error">献立データが登録されていません！</p>
+    <% end %>
+  </article>
 </main>

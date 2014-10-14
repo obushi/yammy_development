@@ -1,18 +1,20 @@
 <main id="list">
-	<h1>すべての献立</h1>
-	<% @dates.each do |day| %>
-	<article class="list">
-		<h2><a href=<%= day.strftime("%Y%m%d") %>> <%= day.strftime("%Y年%1m月%1d日(") + Settings.wday_names_ja[day.wday] + ')' %> </a></h2>
-		<% Settings.period_names_ja.each do |period, val| %>
-		<section class="meal">
-			<h3><%= val %></h3>
-			<ul>
-				<% DishEnergy.where(:meal_id => Meal.where(:date => day, :period => period.to_s).first.id).each do |dish| %>
-				<li class="dish"><%= dish.name %></li>
-				<% end %>
-			</ul>
-		</section>
-		<% end %>
-	</article>
-	<% end %>
+  <h1>すべての献立</h1>
+  <% @dates.each do |day| %>
+  <article class="list">
+    <h2><a href=<%= day.strftime("%Y%m%d") %>> <%= day.strftime("%Y年%1m月%1d日(") + Settings.wday_names_ja[day.wday] + ')' %> </a></h2>
+    <% Settings.period_names_ja.each do |period, val| %>
+    <section class="meal">
+      <% if @meals.where(date: day, period: period.to_s, energy: 0).empty? %>
+      <h3><%= val %></h3>
+      <ul>
+        <% DishEnergy.where(:meal_id => Meal.where(:date => day, :period => period.to_s).first.id).each do |dish| %>
+        <li class="dish"><%= dish.name %></li>
+        <% end %>
+      </ul>
+      <% end %>
+    </section>
+    <% end %>
+  </article>
+  <% end %>
 </main>

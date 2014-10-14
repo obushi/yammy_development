@@ -1,6 +1,6 @@
 class Meal < ActiveRecord::Base
 
-	has_many :dish_energies
+  has_many :dish_energies
 	accepts_nested_attributes_for :dish_energies
 
 	has_many :voters

@@ -10,9 +10,7 @@ class MealController < ApplicationController
 
     # dateパラメータがnil(/でアクセス)またはデータベースに存在する日付の場合
     def date_exists? date
-      if Meal.where(date: Date.today).count != 0
-        return true
-      elsif Meal.where(date: date).count != 0
+      if Meal.where(date: date).count != 0
         return true
       else
         return false
@@ -104,8 +102,10 @@ class MealController < ApplicationController
         # p dish_names
 
         # Main Dishは名前に「ご飯」「パン」以外でもっともカロリーが高いものとする
-        max_energy = DishEnergy.where(meal_id: meal_id).where.not(name: ['食パン', 'ご飯', '食パン', '牛乳　']).maximum('kilo_calorie')
-        max_energy_name = DishEnergy.where(meal_id: meal_id, kilo_calorie: max_energy).first.name
+        unless DishEnergy.where(meal_id: meal_id).empty?
+          max_energy = DishEnergy.where(meal_id: meal_id).where.not(name: ['食パン', 'ご飯', '食パン', '牛乳　']).maximum('kilo_calorie')
+          max_energy_name = DishEnergy.where(meal_id: meal_id, kilo_calorie: max_energy).first.name
+        end
 
         meal_info = Hash.new { |h,k| h[k] = {} }
         meal_info['rank']                 = rank

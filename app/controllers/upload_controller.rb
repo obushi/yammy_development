@@ -3,8 +3,6 @@ class UploadController < ApplicationController
   skip_before_filter:verify_authenticity_token, only: [:new]
   def new
     file = params[:attachment]
-    p file.original_filename
-    p file.nil?
     unless file.nil?
       name = file.original_filename
       perms = ['.xlsx']
@@ -18,7 +16,7 @@ class UploadController < ApplicationController
         begin
           converter.convertXlsx file_dir + name
         rescue
-          result = 'ファイル名はYYYYMMDD-YYXXMMDD.xlsxの形式にしてください。例: 20140501-20140507.xlsx'
+          result = 'ファイル名はYYYYMMDD-YYYYMMDD.xlsxの形式にしてください。例: 20140501-20140507.xlsx'
         else
           converter.createModels
         ensure

@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Dormeal</title>
-	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
   <link rel="stylesheet" href="css/main.css">
   <%= csrf_meta_tags %>
 </head>
@@ -31,23 +31,23 @@
 </div>
 <% if @first_visit.nil?  %>
 <div id="modal" class="hidden">
-	<div id="modal-wrapper"></div>
-	<div id="modal-content">
-		<h1>Yammyへようこそ！</h1>
+  <div id="modal-wrapper"></div>
+  <div id="modal-content">
+    <h1>Yammyへようこそ！</h1>
     <%= image_tag('/img/close.png', class: 'close_button') %>
-		<section class="modal-items">
-			<h3 class="modal-items-title">いつでも見れる</h3>
-			<p class="modal-items-content">部屋からでも、教室からでも学内からであれば最新の献立を見ることができます。</p>
-		</section>
-		<section class="modal-items">
-			<h3 class="modal-items-title">投票しましょう</h3>
-			<p class="modal-items-content">おいしかったメニューは投票しましょう。人気のメニューはリクエストされるかも!?</p>
-		</section>
+    <section class="modal-items">
+      <h3 class="modal-items-title">いつでも見れる</h3>
+      <p class="modal-items-content">部屋からでも、教室からでも学内からであれば最新の献立を見ることができます。</p>
+    </section>
+    <section class="modal-items">
+      <h3 class="modal-items-title">投票しましょう</h3>
+      <p class="modal-items-content">おいしかったメニューは投票しましょう。人気のメニューはリクエストされるかも!?</p>
+    </section>
     <section class="modal-items">
       <h3 class="modal-items-title">過去の献立も</h3>
       <p class="modal-items-content">献立データはいつでもさかのぼって見ることができます。検索もできます。</p>
     </section>
-	</div>
+  </div>
 </div>
 <% end %>
 <nav id="sp-menu">
