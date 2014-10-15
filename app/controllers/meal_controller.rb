@@ -10,6 +10,7 @@ class MealController < ApplicationController
 
     # dateパラメータがnil(/でアクセス)またはデータベースに存在する日付の場合
     def date_exists? date
+      p date
       if Meal.where(date: date).count != 0
         return true
       else
@@ -17,9 +18,9 @@ class MealController < ApplicationController
       end
     end
 
-    @param_date_exists = date_exists? params[:date]
+    @param_date_exists = date_exists? @meal_date.to_s.delete("-") #params[:date]
 
-    if date_exists? params[:date]
+    if date_exists? @meal_date.to_s.delete("-")
       meals = Hash.new
       @menu = Hash.new
       @meal_nutrition = Hash.new
